@@ -1,4 +1,9 @@
+import React from "react";
 import './App.css';
+import restaurant from "./restaurant.jpg"
+
+
+
 function Header(props){
   return (
     <header> 
@@ -11,6 +16,7 @@ function Main(props){
   return(
     <section>
       <p>We serve the most {props.adjective} delicious food around.</p>
+      <img src={restaurant} alt="napkin with fork and plate" height={200}/>
       <ul>
         {props.dishes.map((dish) => <li key={dish.id}>{dish.title}</li>)}
       </ul>
