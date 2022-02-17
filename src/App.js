@@ -12,25 +12,36 @@ function Main(props){
   return(
     <section>
       <p>We serve the most {props.adjective} delicious food around.</p>
+      <ul>
+        {props.dishes.map((dish) => <li>{dish}</li>)}
+      </ul>
     </section>
   )
 }
 
-function Footer(){
+function Footer(props){
   return(
     <footer>
-      <p>It's true.</p>
+      <p>Copyright {props.year}</p>
     </footer>
   )
 }
+
+const dishes = [
+  "Macaroni and Cheese",
+  "Salmon",
+  "Tofu with vegetables"
+];
+
+
 
 
 function App() {
   return (
     <div className="App">
       <Header name="Cindy" />
-      <Main adjective="amazing" />
-      <Footer year={new Date().getFullYear} />
+      <Main adjective="amazing" dishes={dishes} />
+      <Footer year={new Date().getFullYear()} />
     </div>
   );
 }
